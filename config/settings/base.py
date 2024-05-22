@@ -29,6 +29,7 @@ TIME_ZONE = "UTC"
 LANGUAGE_CODE = "en"
 # https://docs.djangoproject.com/en/dev/ref/settings/#languages
 LANGUAGES = [
+    ("en", _("English")),
     ("es", _("Español")),
     ("fr", _("Français")),
 ]

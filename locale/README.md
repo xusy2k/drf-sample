@@ -3,7 +3,9 @@
 Start by configuring the `LANGUAGES` settings in `base.py`, by uncommenting languages you are willing to support. Then, translations strings will be placed in this folder when running:
 
 ```bash
-python manage.py makemessages -all --no-location
+python manage.py makemessages -l en
+python manage.py makemessages -l es
+python manage.py makemessages -l fr
 ```
 
 This should generate `django.po` (stands for Portable Object) files under each locale `<locale name>/LC_MESSAGES/django.po`. Each translatable string in the codebase is collected with its `msgid` and need to be translated as `msgstr`, for example:
