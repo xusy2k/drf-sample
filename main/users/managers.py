@@ -3,8 +3,8 @@ from typing import TYPE_CHECKING
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import UserManager as DjangoUserManager
 
-from .services import send_welcome_email
-from .services import send_welcome_sms
+from .tasks import send_email_task
+from .tasks import send_sms_task
 
 if TYPE_CHECKING:
     from .models import User  # noqa: F401
@@ -25,11 +25,10 @@ class UserManager(DjangoUserManager["User"]):
         user.password = make_password(password)
         user.save(using=self._db)
 
-        _email_sent = send_welcome_email(user)
+        send_email_task.delay(user)
 
-        # Send welcome sms
         if extra_fields.get("phone_number"):
-            _sms_sent = send_welcome_sms(user)
+            send_sms_task.delay(user)
 
         return user
 

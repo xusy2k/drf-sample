@@ -70,3 +70,9 @@ if DEBUG:
             "level": "DEBUG",
             "propagate": False,
         }
+
+# Celery
+# https://docs.celeryq.dev/en/stable/userguide/configuration.html#task-always-eager
+CELERY_TASK_ALWAYS_EAGER = env.bool("DJANGO_CELERY_TASK_ALWAYS_EAGER", False)
+# https://docs.celeryq.dev/en/stable/userguide/configuration.html#task-eager-propagates
+CELERY_TASK_EAGER_PROPAGATES = env.bool("DJANGO_CELERY_TASK_EAGER_PROPAGATES", False)

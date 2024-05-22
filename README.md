@@ -90,9 +90,15 @@ $ python manage.py create_fake_users --number 10
 python manage.py create_fake_users --curl
 ```
 
+## Celery
+
+The project uses Celery to manage asynchronous tasks. To start the Celery worker, you can use the following command:
+
+```bash
+$ celery --app=config.celery_app worker --loglevel=INFO
+```
+
 ## Development
-
-
 
 ### Type checks
 
