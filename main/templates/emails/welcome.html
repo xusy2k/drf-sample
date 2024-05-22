@@ -1,0 +1,83 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .footer {
+        text-align: center;
+        color: #777;
+        padding: 10px 0;
+        font-size: 12px;
+      }
+
+      a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>{{ title|safe }}</h1>
+      </div>
+      <div class="content">
+        <p>{{ title_h1|safe }},</p>
+        <p>
+          {% translate "We are very happy that you have decided to join our community. You can now start exploring all the features we offer" %}
+        </p>
+        <p>{% translate "To help you get started, we recommend" %}:</p>
+        <ul>
+          <li>
+            <strong>{% translate "Customize your profile" %}</strong>:
+            {% translate "Complete your information so we can offer you a more personalized experience" %}.
+          </li>
+          <li>
+            <strong>{% translate "Explore our features" %}</strong>: {% translate "Discover all the tools and resources available to you" %}.
+          </li>
+        </ul>
+        <p>
+          {% translate "If you have any questions or need assistance, do not hesitate to contact us at support email or visit our help section in our help section" %}.
+        </p>
+        <p>{% translate "Thank you for choosing us" %}.</p>
+        <p>{% translate "Kind regards" %},</p>
+      </div>
+      <div class="footer">
+        <p>© {% now "Y" %}</p>
+      </div>
+    </div>
+  </body>
+</html>
