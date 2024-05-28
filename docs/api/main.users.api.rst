@@ -28,14 +28,6 @@ main.users.api.views module
    :undoc-members:
    :show-inheritance:
 
-main.users.api.viewsets module
-------------------------------
-
-.. automodule:: main.users.api.viewsets
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

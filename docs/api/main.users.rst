@@ -54,6 +54,14 @@ main.users.services module
    :undoc-members:
    :show-inheritance:
 
+main.users.tasks module
+-----------------------
+
+.. automodule:: main.users.tasks
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 main.users.urls module
 ----------------------
 

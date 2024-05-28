@@ -125,5 +125,6 @@ Create the documentation with sphinx:
 
 ```bash
 $ cd docs
+$ make apidocs
 $ make livehtml
 ```

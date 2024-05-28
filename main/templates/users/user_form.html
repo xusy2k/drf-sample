@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 
-{% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block title %}
-  {{ user.name }}
+  {% blocktrans with user.first_name as first_name %}Edit your profile, {{ first_name }}{% endblocktrans %}
 {% endblock title %}
 {% block content %}
-  <h1>{{ user.name }}</h1>
+  <h1>{% blocktrans with user.first_name as first_name %}Edit your profile, {{ first_name }}{% endblocktrans %}</h1>
   <form class="form-horizontal"
         method="post"
         action="{% url 'users:update' %}">
     {% csrf_token %}
-    {{ form|crispy }}
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-4"></th>
+          <th class="col-8"></th>
+        </tr>
+      </thead>
+      {{ form.as_table }}
+    </table>
     <div class="control-group">
       <div class="controls">
         <button type="submit" class="btn btn-primary">Update</button>
